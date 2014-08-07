@@ -1,17 +1,13 @@
-def Fibo(n):
-    if n==0:
-        return 1
-    elif n==1:
-        return 2
-    else:
-        return Fibo(n-1)+Fibo(n-2)
+def fun():
+    a=3
+    b=5
+    c=a+b
+    sum=2
+    while c<=4000000:
+        sum=sum+c
+        a=c+b
+        b=a+c
+        c=a+b
+    return sum
 
-n=0
-sum=0
-while Fibo(n)<4000000:
-    if Fibo(n)%2==0:
-        sum=sum+Fibo(n)
-    n=n+1
-
-print sum
-
+print fun()
