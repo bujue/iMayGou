@@ -7,5 +7,5 @@ def fun(n):
             return False
         p+=2
     return True
-terms=filter(fun,range(2,2000000))
+terms=filter(fun,xrange(2,2000000))
 print sum(terms)+2
