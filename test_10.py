@@ -1,11 +1,16 @@
-def fun(n):
-    if n%2==0:
-        return False
-    p=3
-    while p<n**0.5+1:
-        if n%p==0:
-            return False
-        p+=2
-    return True
-terms=filter(fun,xrange(2,2000000))
-print sum(terms)+2
+def prime_sum(n):
+    if n < 2: return 0
+    if n == 2: return 2
+    if n % 2 == 0: n += 1
+    primes = [True] * n
+    primes[0],primes[1] = [None] * 2
+    sum = 0
+    for ind,val in enumerate(primes):
+        if val is True and ind > n ** 0.5 + 1:
+            sum += ind
+        elif val is True:
+            primes[ind*2::ind] = [False] * (((n - 1)//ind) - 1)
+            sum += ind
+    return sum
+
+print prime_sum(2000000)

@@ -1,9 +1,9 @@
 with open('test_11.txt') as f:
     s=[i.split() for i in f]
-#s=[(int(j) for j in i) for i in s]
-#s=[(int(j) for j in s[i]) for i in range(20)]
-for i in range(20):
-    s[i]=[int(j) for j in s[i]]
+s=[[int(j) for j in i] for i in s]
+#s=[[int(j) for j in s[i]] for i in range(20)]
+#for i in range(20):
+   # s[i]=[int(j) for j in s[i]]
 
 max=0
 for i in range(20):

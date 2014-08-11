@@ -2,6 +2,7 @@ s=[]
 def route(n):
     for i in range(1,n+2):
         s.append(range(i))
+    print s
 
     for i in range(1,n+1):
         s[0][0]=1
@@ -11,7 +12,7 @@ def route(n):
         s[i][i]=2*s[i][i-1]
     return s[n][n]
 
-print route(20)
+print route(2)
 
 
 
